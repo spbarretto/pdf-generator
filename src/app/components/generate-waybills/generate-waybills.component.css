@@ -1,0 +1,20 @@
+.codes {
+  position: relative;
+  display: block;
+  background-color: #fff;
+  background-color: var(--clr-card-bg-color, white);
+  width: 100%;
+  margin-top: 1.2rem;
+}
+div.card.cardDetails {
+  margin-left: 1.2rem;
+}
+div.card.cardDetails.customerDetails{
+  margin-bottom: 1.2rem;
+}
+.codeContainer {
+  margin: auto;
+}
+button.btn.btn-success.pdfPrint {
+  float: right;
+}

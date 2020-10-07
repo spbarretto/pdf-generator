@@ -1,0 +1,88 @@
+<div class="main-container">
+  <div class="alert alert-app-level">
+      <h1>Sample Web App</h1>
+  </div>
+  <header class="header header-6">
+      <p>Home</p>
+  </header>
+  <!-- <nav class="subnav">
+      <p>Waybills</p>
+  </nav> -->
+  <div class="content-container">
+  <!-- content area   -->
+    <div class="content-area">
+      <div *ngFor="let order of orders; let i=index;">
+        <div class="card" id="{{order.id}}" #pdfContent>
+          <div class="clr-row">
+            <div class="clr-col-7">
+              <!-- shipper details -->
+              <div class="clr-row">
+                  <!-- <div class="clr-col-lg-6 clr-col-12"> -->
+                      <div class="card cardDetails">
+                          <div class="card-header">
+                              Shipper Details
+                          </div>
+                          <div class="card-block">
+                              <div class="card-text">
+                                  <p>Shipper Name: {{ order.shipper }}</p>
+                                  <p>Shipper Address: 123 Test St. Sampaloc, Manila</p>
+                                  <p>Shipper Contact Number: 0987654321</p>
+                                  <p>Item Description: This is an item description.</p>
+                              </div>
+                          </div>
+                      </div>
+                  <!-- </div> -->
+              </div>
+              <!-- costumer details -->
+              <div class="clr-row">
+                  <!-- <div class="clr-col-lg-6 clr-col-12"> -->
+                      <div class="card cardDetails customerDetails">
+                          <div class="card-header">
+                              Customer Details
+                          </div>
+                          <div class="card-block">
+                              <div class="card-text">
+                                  <p>Customer Name: {{ order.customer }}</p>
+                                  <p>Customer Address: 123 Test St. Cabuyao, Laguna</p>
+                                  <p>Customer Contact Number: 0987654321</p>
+                              </div>
+                          </div>
+                      </div>
+                  <!-- </div> -->
+              </div>
+            </div>
+            <div class="clr-col-5">
+              <div class="clr-row">
+                  <div class="codeContainer" style="margin-top: 1.2rem;">
+                      <h4 style="text-align: center;">ORDER TRACKING NUMBER</h4>
+                      <div class="codes">
+                          <ngx-barcode [bc-value]="barcodeValue" [bc-display-value]="true"></ngx-barcode>
+                      </div>
+                  </div>
+              </div>
+              <div class="clr-row">
+                  <div class="codeContainer" style="margin-top: 2.2rem;">
+                      <h4 style="text-align: center;">1-LOGISTICS QR CODE</h4>
+                      <div class="codes">
+                          <ngx-qrcode
+                                [elementType]="elementType"
+                                [value] = "qrValue"
+                                cssClass = "aclass"
+                                errorCorrectionLevel = "L">
+                          </ngx-qrcode>
+                      </div>
+                  </div>
+             </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-success pdfPrint" style="margin: auto;" (click)="convertToPDF()">Print PDF</button>
+    </div>
+    <!-- side nav -->
+    <nav class="sidenav">
+          <a href="#"></a>
+    </nav>
+  </div>
+<div>
